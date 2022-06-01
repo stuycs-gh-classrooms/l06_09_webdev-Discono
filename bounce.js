@@ -53,7 +53,7 @@ function swap( arr,  i0, i1) {
   arr[i1] = t;
 }//swap
 
-int[] randomArray( num) {
+function randomArray( num) {
   var values = new Array(num};
 
   for (int i=0; i<values.length; i++) {
