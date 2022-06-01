@@ -1,42 +1,41 @@
-import processing.video.*;
-Capture camera;
-PImage img;
-
+var ySpeed;
+var rectX;
+var rectY;
+var xSpeed; 
 
 function setup() {
-createCanvas(640,480);
-
-var cams = Capture.list();
-println(cams[0]+"test");
-
-
-camera = new Capture(this, cams[0]);
-camera.start();
-img = camera;
+ background(0);
+ createCanvas(1920,1080);
+ rectX = int(random(width-300));
+ rectY = int(random(height-100));
+ varRandomize();
+ println ( "yspeed: " + ySpeed + "\txspeed: " + xSpeed + "\trectX: " + rectX + "\trectY: " + rectY);
 }
-
 function draw() {
-  // put drawing code here
-  image(img, 0, 0);
+
+  saver();
+  saver();
 }
 
-//do note that i wasn't able to test this at home, so it may nd up failing completely and i will have no idea.
-
-function captureEvent(Capture camera){
- camera.read(); 
+function varRandomize() {
+  
+ xSpeed = int(random(-50,50));
+ ySpeed = int(random(-50,50));
+ if (xSpeed == 0 || ySpeed == 0) {
+  varRandomize();
+  } 
 }
 
-
-function keyPressed() {
-if (key == ' ') {
-invert();
-
-}
-}
-
-function invert() {
-  for (int p = 0; p<img.pixels.length; p++) {
-    img.pixels[p] = color(abs(255 - red(img.pixels[p])), abs(255 - blue(img.pixels[p])), abs(255 - green(img.pixels[p])));
-  }
-  img.updatePixels();
+function saver() {
+    background(0);
+    rect(rectX, rectY, 300,100);
+    if ( rectX > width-300 || rectX<=0) {
+      xSpeed = xSpeed * -1;
+    }
+    
+    if ( rectY > height-100 || rectY<=0) {
+      ySpeed = ySpeed * -1;
+    }
+    rectX += xSpeed;
+    rectY += ySpeed;
 }
