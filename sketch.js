@@ -9,7 +9,7 @@ function setup() {
  rectX = int(random(width-300));
  rectY = int(random(height-100));
  varRandomize();
- //println ( "yspeed: " + ySpeed + "\txspeed: " + xSpeed + "\trectX: " + rectX + "\trectY: " + rectY);
+
 }
 function draw() {
 
