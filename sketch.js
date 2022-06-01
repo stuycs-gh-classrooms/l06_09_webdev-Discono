@@ -4,12 +4,12 @@ var rectY;
 var xSpeed; 
 
 function setup() {
- background(0);
+ background(255);
  createCanvas(1920,1080);
  rectX = int(random(width-300));
  rectY = int(random(height-100));
  varRandomize();
- println ( "yspeed: " + ySpeed + "\txspeed: " + xSpeed + "\trectX: " + rectX + "\trectY: " + rectY);
+ //println ( "yspeed: " + ySpeed + "\txspeed: " + xSpeed + "\trectX: " + rectX + "\trectY: " + rectY);
 }
 function draw() {
 
