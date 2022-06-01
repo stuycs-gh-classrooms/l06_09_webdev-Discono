@@ -1,7 +1,12 @@
-function setup() {
-size(640,480);
+import processing.video.*;
+Capture camera;
+PImage img;
 
-String[] cams = Capture.list();
+
+function setup() {
+createCanvas(640,480);
+
+var cams = Capture.list();
 println(cams[0]+"test");
 
 
@@ -16,9 +21,6 @@ function draw() {
 }
 
 //do note that i wasn't able to test this at home, so it may nd up failing completely and i will have no idea.
-import processing.video.*;
-Capture camera;
-PImage img;
 
 function captureEvent(Capture camera){
  camera.read(); 
